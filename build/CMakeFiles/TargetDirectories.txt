@@ -1,0 +1,3 @@
+/home/ademyoussfi/Desktop/Projects/football_model/build/CMakeFiles/test_runner.dir
+/home/ademyoussfi/Desktop/Projects/football_model/build/CMakeFiles/edit_cache.dir
+/home/ademyoussfi/Desktop/Projects/football_model/build/CMakeFiles/rebuild_cache.dir
