@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ademyoussfi/Desktop/Projects/football_model
+CMAKE_SOURCE_DIR = /home/ademyoussfi/Desktop/Projects/football-coach/Analysis
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ademyoussfi/Desktop/Projects/football_model/build
+CMAKE_BINARY_DIR = /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ademyoussfi/Desktop/Projects/football_model/build/CMakeFiles /home/ademyoussfi/Desktop/Projects/football_model/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ademyoussfi/Desktop/Projects/football_model/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,12 +129,74 @@ test_runner/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/build
 .PHONY : test_runner/fast
 
+#=============================================================================
+# Target rules for targets named analysis_service
+
+# Build rule for target.
+analysis_service: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 analysis_service
+.PHONY : analysis_service
+
+# fast build rule for target.
+analysis_service/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/build
+.PHONY : analysis_service/fast
+
+proto/analysis.grpc.pb.o: proto/analysis.grpc.pb.cc.o
+.PHONY : proto/analysis.grpc.pb.o
+
+# target to build an object file
+proto/analysis.grpc.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/proto/analysis.grpc.pb.cc.o
+.PHONY : proto/analysis.grpc.pb.cc.o
+
+proto/analysis.grpc.pb.i: proto/analysis.grpc.pb.cc.i
+.PHONY : proto/analysis.grpc.pb.i
+
+# target to preprocess a source file
+proto/analysis.grpc.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/proto/analysis.grpc.pb.cc.i
+.PHONY : proto/analysis.grpc.pb.cc.i
+
+proto/analysis.grpc.pb.s: proto/analysis.grpc.pb.cc.s
+.PHONY : proto/analysis.grpc.pb.s
+
+# target to generate assembly for a file
+proto/analysis.grpc.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/proto/analysis.grpc.pb.cc.s
+.PHONY : proto/analysis.grpc.pb.cc.s
+
+proto/analysis.pb.o: proto/analysis.pb.cc.o
+.PHONY : proto/analysis.pb.o
+
+# target to build an object file
+proto/analysis.pb.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/proto/analysis.pb.cc.o
+.PHONY : proto/analysis.pb.cc.o
+
+proto/analysis.pb.i: proto/analysis.pb.cc.i
+.PHONY : proto/analysis.pb.i
+
+# target to preprocess a source file
+proto/analysis.pb.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/proto/analysis.pb.cc.i
+.PHONY : proto/analysis.pb.cc.i
+
+proto/analysis.pb.s: proto/analysis.pb.cc.s
+.PHONY : proto/analysis.pb.s
+
+# target to generate assembly for a file
+proto/analysis.pb.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/proto/analysis.pb.cc.s
+.PHONY : proto/analysis.pb.cc.s
+
 src/analytics/metrics.o: src/analytics/metrics.cpp.o
 .PHONY : src/analytics/metrics.o
 
 # target to build an object file
 src/analytics/metrics.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/analytics/metrics.cpp.o
 .PHONY : src/analytics/metrics.cpp.o
 
 src/analytics/metrics.i: src/analytics/metrics.cpp.i
@@ -143,6 +205,7 @@ src/analytics/metrics.i: src/analytics/metrics.cpp.i
 # target to preprocess a source file
 src/analytics/metrics.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/analytics/metrics.cpp.i
 .PHONY : src/analytics/metrics.cpp.i
 
 src/analytics/metrics.s: src/analytics/metrics.cpp.s
@@ -151,6 +214,7 @@ src/analytics/metrics.s: src/analytics/metrics.cpp.s
 # target to generate assembly for a file
 src/analytics/metrics.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/analytics/metrics.cpp.s
 .PHONY : src/analytics/metrics.cpp.s
 
 src/detection/ball_tracker.o: src/detection/ball_tracker.cpp.o
@@ -159,6 +223,7 @@ src/detection/ball_tracker.o: src/detection/ball_tracker.cpp.o
 # target to build an object file
 src/detection/ball_tracker.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/detection/ball_tracker.cpp.o
 .PHONY : src/detection/ball_tracker.cpp.o
 
 src/detection/ball_tracker.i: src/detection/ball_tracker.cpp.i
@@ -167,6 +232,7 @@ src/detection/ball_tracker.i: src/detection/ball_tracker.cpp.i
 # target to preprocess a source file
 src/detection/ball_tracker.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/detection/ball_tracker.cpp.i
 .PHONY : src/detection/ball_tracker.cpp.i
 
 src/detection/ball_tracker.s: src/detection/ball_tracker.cpp.s
@@ -175,6 +241,7 @@ src/detection/ball_tracker.s: src/detection/ball_tracker.cpp.s
 # target to generate assembly for a file
 src/detection/ball_tracker.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/detection/ball_tracker.cpp.s
 .PHONY : src/detection/ball_tracker.cpp.s
 
 src/detection/player_tracker.o: src/detection/player_tracker.cpp.o
@@ -183,6 +250,7 @@ src/detection/player_tracker.o: src/detection/player_tracker.cpp.o
 # target to build an object file
 src/detection/player_tracker.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/detection/player_tracker.cpp.o
 .PHONY : src/detection/player_tracker.cpp.o
 
 src/detection/player_tracker.i: src/detection/player_tracker.cpp.i
@@ -191,6 +259,7 @@ src/detection/player_tracker.i: src/detection/player_tracker.cpp.i
 # target to preprocess a source file
 src/detection/player_tracker.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/detection/player_tracker.cpp.i
 .PHONY : src/detection/player_tracker.cpp.i
 
 src/detection/player_tracker.s: src/detection/player_tracker.cpp.s
@@ -199,6 +268,7 @@ src/detection/player_tracker.s: src/detection/player_tracker.cpp.s
 # target to generate assembly for a file
 src/detection/player_tracker.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/detection/player_tracker.cpp.s
 .PHONY : src/detection/player_tracker.cpp.s
 
 src/detection/yolov8.o: src/detection/yolov8.cpp.o
@@ -207,6 +277,7 @@ src/detection/yolov8.o: src/detection/yolov8.cpp.o
 # target to build an object file
 src/detection/yolov8.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/detection/yolov8.cpp.o
 .PHONY : src/detection/yolov8.cpp.o
 
 src/detection/yolov8.i: src/detection/yolov8.cpp.i
@@ -215,6 +286,7 @@ src/detection/yolov8.i: src/detection/yolov8.cpp.i
 # target to preprocess a source file
 src/detection/yolov8.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/detection/yolov8.cpp.i
 .PHONY : src/detection/yolov8.cpp.i
 
 src/detection/yolov8.s: src/detection/yolov8.cpp.s
@@ -223,6 +295,7 @@ src/detection/yolov8.s: src/detection/yolov8.cpp.s
 # target to generate assembly for a file
 src/detection/yolov8.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/detection/yolov8.cpp.s
 .PHONY : src/detection/yolov8.cpp.s
 
 src/main.o: src/main.cpp.o
@@ -249,12 +322,37 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/service.o: src/service.cpp.o
+.PHONY : src/service.o
+
+# target to build an object file
+src/service.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/service.cpp.o
+.PHONY : src/service.cpp.o
+
+src/service.i: src/service.cpp.i
+.PHONY : src/service.i
+
+# target to preprocess a source file
+src/service.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/service.cpp.i
+.PHONY : src/service.cpp.i
+
+src/service.s: src/service.cpp.s
+.PHONY : src/service.s
+
+# target to generate assembly for a file
+src/service.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/service.cpp.s
+.PHONY : src/service.cpp.s
+
 src/utils/calibration.o: src/utils/calibration.cpp.o
 .PHONY : src/utils/calibration.o
 
 # target to build an object file
 src/utils/calibration.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/utils/calibration.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/utils/calibration.cpp.o
 .PHONY : src/utils/calibration.cpp.o
 
 src/utils/calibration.i: src/utils/calibration.cpp.i
@@ -263,6 +361,7 @@ src/utils/calibration.i: src/utils/calibration.cpp.i
 # target to preprocess a source file
 src/utils/calibration.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/utils/calibration.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/utils/calibration.cpp.i
 .PHONY : src/utils/calibration.cpp.i
 
 src/utils/calibration.s: src/utils/calibration.cpp.s
@@ -271,6 +370,7 @@ src/utils/calibration.s: src/utils/calibration.cpp.s
 # target to generate assembly for a file
 src/utils/calibration.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/utils/calibration.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/utils/calibration.cpp.s
 .PHONY : src/utils/calibration.cpp.s
 
 src/utils/kalman_filter.o: src/utils/kalman_filter.cpp.o
@@ -279,6 +379,7 @@ src/utils/kalman_filter.o: src/utils/kalman_filter.cpp.o
 # target to build an object file
 src/utils/kalman_filter.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/utils/kalman_filter.cpp.o
 .PHONY : src/utils/kalman_filter.cpp.o
 
 src/utils/kalman_filter.i: src/utils/kalman_filter.cpp.i
@@ -287,6 +388,7 @@ src/utils/kalman_filter.i: src/utils/kalman_filter.cpp.i
 # target to preprocess a source file
 src/utils/kalman_filter.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/utils/kalman_filter.cpp.i
 .PHONY : src/utils/kalman_filter.cpp.i
 
 src/utils/kalman_filter.s: src/utils/kalman_filter.cpp.s
@@ -295,6 +397,7 @@ src/utils/kalman_filter.s: src/utils/kalman_filter.cpp.s
 # target to generate assembly for a file
 src/utils/kalman_filter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/utils/kalman_filter.cpp.s
 .PHONY : src/utils/kalman_filter.cpp.s
 
 src/utils/logger.o: src/utils/logger.cpp.o
@@ -303,6 +406,7 @@ src/utils/logger.o: src/utils/logger.cpp.o
 # target to build an object file
 src/utils/logger.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/utils/logger.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/utils/logger.cpp.o
 .PHONY : src/utils/logger.cpp.o
 
 src/utils/logger.i: src/utils/logger.cpp.i
@@ -311,6 +415,7 @@ src/utils/logger.i: src/utils/logger.cpp.i
 # target to preprocess a source file
 src/utils/logger.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/utils/logger.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/utils/logger.cpp.i
 .PHONY : src/utils/logger.cpp.i
 
 src/utils/logger.s: src/utils/logger.cpp.s
@@ -319,6 +424,7 @@ src/utils/logger.s: src/utils/logger.cpp.s
 # target to generate assembly for a file
 src/utils/logger.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/src/utils/logger.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/src/utils/logger.cpp.s
 .PHONY : src/utils/logger.cpp.s
 
 # Help Target
@@ -329,7 +435,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... analysis_service"
 	@echo "... test_runner"
+	@echo "... proto/analysis.grpc.pb.o"
+	@echo "... proto/analysis.grpc.pb.i"
+	@echo "... proto/analysis.grpc.pb.s"
+	@echo "... proto/analysis.pb.o"
+	@echo "... proto/analysis.pb.i"
+	@echo "... proto/analysis.pb.s"
 	@echo "... src/analytics/metrics.o"
 	@echo "... src/analytics/metrics.i"
 	@echo "... src/analytics/metrics.s"
@@ -345,6 +458,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/service.o"
+	@echo "... src/service.i"
+	@echo "... src/service.s"
 	@echo "... src/utils/calibration.o"
 	@echo "... src/utils/calibration.i"
 	@echo "... src/utils/calibration.s"

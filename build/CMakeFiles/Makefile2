@@ -54,16 +54,17 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ademyoussfi/Desktop/Projects/football_model
+CMAKE_SOURCE_DIR = /home/ademyoussfi/Desktop/Projects/football-coach/Analysis
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ademyoussfi/Desktop/Projects/football_model/build
+CMAKE_BINARY_DIR = /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
 all: CMakeFiles/test_runner.dir/all
+all: CMakeFiles/analysis_service.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -72,6 +73,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/test_runner.dir/clean
+clean: CMakeFiles/analysis_service.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -81,14 +83,14 @@ clean: CMakeFiles/test_runner.dir/clean
 CMakeFiles/test_runner.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ademyoussfi/Desktop/Projects/football_model/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9 "Built target test_runner"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles --progress-num=13,14,15,16,17,18,19,20,21 "Built target test_runner"
 .PHONY : CMakeFiles/test_runner.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_runner.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ademyoussfi/Desktop/Projects/football_model/build/CMakeFiles 9
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles 9
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_runner.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ademyoussfi/Desktop/Projects/football_model/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_runner.dir/rule
 
 # Convenience name for target.
@@ -99,6 +101,32 @@ test_runner: CMakeFiles/test_runner.dir/rule
 CMakeFiles/test_runner.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_runner.dir/build.make CMakeFiles/test_runner.dir/clean
 .PHONY : CMakeFiles/test_runner.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/analysis_service.dir
+
+# All Build rule for target.
+CMakeFiles/analysis_service.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12 "Built target analysis_service"
+.PHONY : CMakeFiles/analysis_service.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/analysis_service.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles 12
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/analysis_service.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles 0
+.PHONY : CMakeFiles/analysis_service.dir/rule
+
+# Convenience name for target.
+analysis_service: CMakeFiles/analysis_service.dir/rule
+.PHONY : analysis_service
+
+# clean rule for target.
+CMakeFiles/analysis_service.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/analysis_service.dir/build.make CMakeFiles/analysis_service.dir/clean
+.PHONY : CMakeFiles/analysis_service.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

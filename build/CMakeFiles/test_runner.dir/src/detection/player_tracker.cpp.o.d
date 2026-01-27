@@ -1,7 +1,7 @@
 CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.o: \
- /home/ademyoussfi/Desktop/Projects/football_model/src/detection/player_tracker.cpp \
+ /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/detection/player_tracker.cpp \
  /usr/include/stdc-predef.h \
- /home/ademyoussfi/Desktop/Projects/football_model/src/detection/player_tracker.h \
+ /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/detection/player_tracker.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -350,7 +350,7 @@ CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.o: \
  /usr/include/opencv4/opencv2/video.hpp \
  /usr/include/opencv4/opencv2/video/tracking.hpp \
  /usr/include/opencv4/opencv2/video/background_segm.hpp \
- /home/ademyoussfi/Desktop/Projects/football_model/src/detection/yolov8.h \
+ /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/detection/yolov8.h \
  /usr/include/x86_64-linux-gnu/NvInfer.h \
  /usr/include/x86_64-linux-gnu/NvInferLegacyDims.h \
  /usr/include/x86_64-linux-gnu/NvInferRuntimeBase.h \
@@ -369,6 +369,6 @@ CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.o: \
  /usr/include/x86_64-linux-gnu/NvInferRuntimeCommon.h \
  /usr/include/x86_64-linux-gnu/NvInferPluginBase.h \
  /usr/include/x86_64-linux-gnu/NvInferRuntimePlugin.h \
- /home/ademyoussfi/Desktop/Projects/football_model/src/utils/kalman_filter.h \
+ /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/utils/kalman_filter.h \
  /usr/include/c++/11/numeric /usr/include/c++/11/bits/stl_numeric.h \
  /usr/include/c++/11/pstl/glue_numeric_defs.h

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ademyoussfi/Desktop/Projects/football_model
+CMAKE_SOURCE_DIR = /home/ademyoussfi/Desktop/Projects/football-coach/Analysis
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ademyoussfi/Desktop/Projects/football_model/build
+CMAKE_BINARY_DIR = /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/test_runner.dir/depend.make
@@ -72,114 +72,114 @@ include CMakeFiles/test_runner.dir/flags.make
 CMakeFiles/test_runner.dir/src/main.cpp.o: CMakeFiles/test_runner.dir/flags.make
 CMakeFiles/test_runner.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/test_runner.dir/src/main.cpp.o: CMakeFiles/test_runner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ademyoussfi/Desktop/Projects/football_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test_runner.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_runner.dir/src/main.cpp.o -MF CMakeFiles/test_runner.dir/src/main.cpp.o.d -o CMakeFiles/test_runner.dir/src/main.cpp.o -c /home/ademyoussfi/Desktop/Projects/football_model/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/test_runner.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_runner.dir/src/main.cpp.o -MF CMakeFiles/test_runner.dir/src/main.cpp.o.d -o CMakeFiles/test_runner.dir/src/main.cpp.o -c /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/main.cpp
 
 CMakeFiles/test_runner.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_runner.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ademyoussfi/Desktop/Projects/football_model/src/main.cpp > CMakeFiles/test_runner.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/main.cpp > CMakeFiles/test_runner.dir/src/main.cpp.i
 
 CMakeFiles/test_runner.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_runner.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ademyoussfi/Desktop/Projects/football_model/src/main.cpp -o CMakeFiles/test_runner.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/main.cpp -o CMakeFiles/test_runner.dir/src/main.cpp.s
 
 CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.o: CMakeFiles/test_runner.dir/flags.make
 CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.o: ../src/analytics/metrics.cpp
 CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.o: CMakeFiles/test_runner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ademyoussfi/Desktop/Projects/football_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.o -MF CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.o.d -o CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.o -c /home/ademyoussfi/Desktop/Projects/football_model/src/analytics/metrics.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.o -MF CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.o.d -o CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.o -c /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/analytics/metrics.cpp
 
 CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ademyoussfi/Desktop/Projects/football_model/src/analytics/metrics.cpp > CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/analytics/metrics.cpp > CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.i
 
 CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ademyoussfi/Desktop/Projects/football_model/src/analytics/metrics.cpp -o CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/analytics/metrics.cpp -o CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.s
 
 CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.o: CMakeFiles/test_runner.dir/flags.make
 CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.o: ../src/detection/player_tracker.cpp
 CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.o: CMakeFiles/test_runner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ademyoussfi/Desktop/Projects/football_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.o -MF CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.o.d -o CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.o -c /home/ademyoussfi/Desktop/Projects/football_model/src/detection/player_tracker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.o -MF CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.o.d -o CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.o -c /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/detection/player_tracker.cpp
 
 CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ademyoussfi/Desktop/Projects/football_model/src/detection/player_tracker.cpp > CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/detection/player_tracker.cpp > CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.i
 
 CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ademyoussfi/Desktop/Projects/football_model/src/detection/player_tracker.cpp -o CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/detection/player_tracker.cpp -o CMakeFiles/test_runner.dir/src/detection/player_tracker.cpp.s
 
 CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.o: CMakeFiles/test_runner.dir/flags.make
 CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.o: ../src/detection/ball_tracker.cpp
 CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.o: CMakeFiles/test_runner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ademyoussfi/Desktop/Projects/football_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.o -MF CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.o.d -o CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.o -c /home/ademyoussfi/Desktop/Projects/football_model/src/detection/ball_tracker.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.o -MF CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.o.d -o CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.o -c /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/detection/ball_tracker.cpp
 
 CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ademyoussfi/Desktop/Projects/football_model/src/detection/ball_tracker.cpp > CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/detection/ball_tracker.cpp > CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.i
 
 CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ademyoussfi/Desktop/Projects/football_model/src/detection/ball_tracker.cpp -o CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/detection/ball_tracker.cpp -o CMakeFiles/test_runner.dir/src/detection/ball_tracker.cpp.s
 
 CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.o: CMakeFiles/test_runner.dir/flags.make
 CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.o: ../src/detection/yolov8.cpp
 CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.o: CMakeFiles/test_runner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ademyoussfi/Desktop/Projects/football_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.o -MF CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.o.d -o CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.o -c /home/ademyoussfi/Desktop/Projects/football_model/src/detection/yolov8.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.o -MF CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.o.d -o CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.o -c /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/detection/yolov8.cpp
 
 CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ademyoussfi/Desktop/Projects/football_model/src/detection/yolov8.cpp > CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/detection/yolov8.cpp > CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.i
 
 CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ademyoussfi/Desktop/Projects/football_model/src/detection/yolov8.cpp -o CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/detection/yolov8.cpp -o CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.s
 
 CMakeFiles/test_runner.dir/src/utils/calibration.cpp.o: CMakeFiles/test_runner.dir/flags.make
 CMakeFiles/test_runner.dir/src/utils/calibration.cpp.o: ../src/utils/calibration.cpp
 CMakeFiles/test_runner.dir/src/utils/calibration.cpp.o: CMakeFiles/test_runner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ademyoussfi/Desktop/Projects/football_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test_runner.dir/src/utils/calibration.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_runner.dir/src/utils/calibration.cpp.o -MF CMakeFiles/test_runner.dir/src/utils/calibration.cpp.o.d -o CMakeFiles/test_runner.dir/src/utils/calibration.cpp.o -c /home/ademyoussfi/Desktop/Projects/football_model/src/utils/calibration.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/test_runner.dir/src/utils/calibration.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_runner.dir/src/utils/calibration.cpp.o -MF CMakeFiles/test_runner.dir/src/utils/calibration.cpp.o.d -o CMakeFiles/test_runner.dir/src/utils/calibration.cpp.o -c /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/utils/calibration.cpp
 
 CMakeFiles/test_runner.dir/src/utils/calibration.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_runner.dir/src/utils/calibration.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ademyoussfi/Desktop/Projects/football_model/src/utils/calibration.cpp > CMakeFiles/test_runner.dir/src/utils/calibration.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/utils/calibration.cpp > CMakeFiles/test_runner.dir/src/utils/calibration.cpp.i
 
 CMakeFiles/test_runner.dir/src/utils/calibration.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_runner.dir/src/utils/calibration.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ademyoussfi/Desktop/Projects/football_model/src/utils/calibration.cpp -o CMakeFiles/test_runner.dir/src/utils/calibration.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/utils/calibration.cpp -o CMakeFiles/test_runner.dir/src/utils/calibration.cpp.s
 
 CMakeFiles/test_runner.dir/src/utils/logger.cpp.o: CMakeFiles/test_runner.dir/flags.make
 CMakeFiles/test_runner.dir/src/utils/logger.cpp.o: ../src/utils/logger.cpp
 CMakeFiles/test_runner.dir/src/utils/logger.cpp.o: CMakeFiles/test_runner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ademyoussfi/Desktop/Projects/football_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/test_runner.dir/src/utils/logger.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_runner.dir/src/utils/logger.cpp.o -MF CMakeFiles/test_runner.dir/src/utils/logger.cpp.o.d -o CMakeFiles/test_runner.dir/src/utils/logger.cpp.o -c /home/ademyoussfi/Desktop/Projects/football_model/src/utils/logger.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/test_runner.dir/src/utils/logger.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_runner.dir/src/utils/logger.cpp.o -MF CMakeFiles/test_runner.dir/src/utils/logger.cpp.o.d -o CMakeFiles/test_runner.dir/src/utils/logger.cpp.o -c /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/utils/logger.cpp
 
 CMakeFiles/test_runner.dir/src/utils/logger.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_runner.dir/src/utils/logger.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ademyoussfi/Desktop/Projects/football_model/src/utils/logger.cpp > CMakeFiles/test_runner.dir/src/utils/logger.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/utils/logger.cpp > CMakeFiles/test_runner.dir/src/utils/logger.cpp.i
 
 CMakeFiles/test_runner.dir/src/utils/logger.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_runner.dir/src/utils/logger.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ademyoussfi/Desktop/Projects/football_model/src/utils/logger.cpp -o CMakeFiles/test_runner.dir/src/utils/logger.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/utils/logger.cpp -o CMakeFiles/test_runner.dir/src/utils/logger.cpp.s
 
 CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.o: CMakeFiles/test_runner.dir/flags.make
 CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.o: ../src/utils/kalman_filter.cpp
 CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.o: CMakeFiles/test_runner.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ademyoussfi/Desktop/Projects/football_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.o -MF CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.o.d -o CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.o -c /home/ademyoussfi/Desktop/Projects/football_model/src/utils/kalman_filter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.o -MF CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.o.d -o CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.o -c /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/utils/kalman_filter.cpp
 
 CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ademyoussfi/Desktop/Projects/football_model/src/utils/kalman_filter.cpp > CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/utils/kalman_filter.cpp > CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.i
 
 CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ademyoussfi/Desktop/Projects/football_model/src/utils/kalman_filter.cpp -o CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/utils/kalman_filter.cpp -o CMakeFiles/test_runner.dir/src/utils/kalman_filter.cpp.s
 
 # Object files for target test_runner
 test_runner_OBJECTS = \
@@ -263,7 +263,7 @@ test_runner: /usr/lib/x86_64-linux-gnu/libopencv_photo.so.4.5.4d
 test_runner: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.4.5.4d
 test_runner: /usr/lib/x86_64-linux-gnu/libopencv_core.so.4.5.4d
 test_runner: CMakeFiles/test_runner.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ademyoussfi/Desktop/Projects/football_model/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable test_runner"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable test_runner"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_runner.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -275,6 +275,6 @@ CMakeFiles/test_runner.dir/clean:
 .PHONY : CMakeFiles/test_runner.dir/clean
 
 CMakeFiles/test_runner.dir/depend:
-	cd /home/ademyoussfi/Desktop/Projects/football_model/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ademyoussfi/Desktop/Projects/football_model /home/ademyoussfi/Desktop/Projects/football_model /home/ademyoussfi/Desktop/Projects/football_model/build /home/ademyoussfi/Desktop/Projects/football_model/build /home/ademyoussfi/Desktop/Projects/football_model/build/CMakeFiles/test_runner.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ademyoussfi/Desktop/Projects/football-coach/Analysis /home/ademyoussfi/Desktop/Projects/football-coach/Analysis /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles/test_runner.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/test_runner.dir/depend
 

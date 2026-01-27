@@ -1,4 +1,4 @@
-# Install script for directory: /home/ademyoussfi/Desktop/Projects/football_model
+# Install script for directory: /home/ademyoussfi/Desktop/Projects/football-coach/Analysis
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ademyoussfi/Desktop/Projects/football_model/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

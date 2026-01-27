@@ -1,7 +1,7 @@
 CMakeFiles/test_runner.dir/src/utils/logger.cpp.o: \
- /home/ademyoussfi/Desktop/Projects/football_model/src/utils/logger.cpp \
+ /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/utils/logger.cpp \
  /usr/include/stdc-predef.h \
- /home/ademyoussfi/Desktop/Projects/football_model/src/utils/logger.h \
+ /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/utils/logger.h \
  /usr/include/x86_64-linux-gnu/NvInfer.h \
  /usr/include/x86_64-linux-gnu/NvInferLegacyDims.h \
  /usr/include/x86_64-linux-gnu/NvInferRuntimeBase.h \

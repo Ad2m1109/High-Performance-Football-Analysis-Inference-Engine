@@ -1,7 +1,7 @@
 CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.o: \
- /home/ademyoussfi/Desktop/Projects/football_model/src/analytics/metrics.cpp \
+ /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/analytics/metrics.cpp \
  /usr/include/stdc-predef.h \
- /home/ademyoussfi/Desktop/Projects/football_model/src/analytics/metrics.h \
+ /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/analytics/metrics.h \
  /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -353,7 +353,7 @@ CMakeFiles/test_runner.dir/src/analytics/metrics.cpp.o: \
  /usr/include/opencv4/opencv2/video.hpp \
  /usr/include/opencv4/opencv2/video/tracking.hpp \
  /usr/include/opencv4/opencv2/video/background_segm.hpp \
- /home/ademyoussfi/Desktop/Projects/football_model/fast-cpp-csv-parser/csv.h \
+ /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/fast-cpp-csv-parser/csv.h \
  /usr/include/c++/11/condition_variable /usr/include/c++/11/thread \
  /usr/include/c++/11/bits/std_thread.h \
  /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/cassert \

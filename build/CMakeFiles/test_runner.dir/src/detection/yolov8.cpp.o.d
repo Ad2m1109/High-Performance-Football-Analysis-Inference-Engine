@@ -1,7 +1,7 @@
 CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.o: \
- /home/ademyoussfi/Desktop/Projects/football_model/src/detection/yolov8.cpp \
+ /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/detection/yolov8.cpp \
  /usr/include/stdc-predef.h \
- /home/ademyoussfi/Desktop/Projects/football_model/src/detection/yolov8.h \
+ /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/detection/yolov8.h \
  /usr/include/c++/11/string \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -373,7 +373,7 @@ CMakeFiles/test_runner.dir/src/detection/yolov8.cpp.o: \
  /usr/include/x86_64-linux-gnu/NvInferRuntimePlugin.h \
  /usr/include/x86_64-linux-gnu/NvOnnxParser.h \
  /usr/include/x86_64-linux-gnu/NvInfer.h \
- /home/ademyoussfi/Desktop/Projects/football_model/src/utils/logger.h \
+ /home/ademyoussfi/Desktop/Projects/football-coach/Analysis/src/utils/logger.h \
  /usr/include/c++/11/fstream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
