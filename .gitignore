@@ -1,0 +1,23 @@
+# Build directory
+build/
+
+# TensorRT Engine files (generated)
+*.engine
+
+# AI Models (large files)
+*.onnx
+*.pt
+
+# CSV Results / metrics
+*.csv
+
+# System / Installer files
+*.deb
+
+# IDE settings
+.vscode/
+
+# Python cache (if any scripts are added)
+__pycache__/
+*.py[cod]
+*$py.class

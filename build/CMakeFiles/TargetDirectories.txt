@@ -1,4 +1,0 @@
-/home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles/test_runner.dir
-/home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles/analysis_service.dir
-/home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles/edit_cache.dir
-/home/ademyoussfi/Desktop/Projects/football-coach/Analysis/build/CMakeFiles/rebuild_cache.dir
