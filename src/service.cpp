@@ -1,9 +1,13 @@
+#include <atomic>
 #include <chrono>
+#include <fcntl.h>
 #include <filesystem>
 #include <iostream>
 #include <memory>
 #include <string>
+#include <sys/stat.h>
 #include <thread>
+#include <unistd.h>
 
 #include "analysis.grpc.pb.h"
 #include <grpcpp/grpcpp.h>
@@ -159,43 +163,142 @@ class AnalysisEngineServiceImpl final : public AnalysisEngine::Service {
     return Status::OK;
   }
 
-  Status StreamAnalysis(ServerContext *context,
-                        grpc::ServerReaderWriter<analysis::MetricsUpdate,
-                                                 analysis::VideoChunk> *stream)
-      override {
-    std::cout << "Starting bi-directional streaming analysis..." << std::endl;
+  Status StreamAnalysis(
+      ServerContext *context,
+      grpc::ServerReaderWriter<analysis::MetricsUpdate, analysis::VideoChunk>
+          *stream) override {
+    std::cout << "Starting real-time streaming analysis..." << std::endl;
 
-    analysis::VideoChunk chunk;
-    int chunks_received = 0;
-    std::string match_id = "unknown";
-
-    while (stream->Read(&chunk)) {
-      chunks_received++;
-      if (chunks_received == 1) {
-        match_id = chunk.match_id();
-        std::cout << "Streaming for match: " << match_id << std::endl;
-      }
-
-      // Phase 1: Just echo progress back
-      if (chunks_received % 10 == 0 || chunk.is_last_chunk()) {
-        analysis::MetricsUpdate update;
-        update.set_status("RECEIVING");
-        update.set_progress(0.0); // Progress is hard to track without knowing total size
-        update.set_message("Received " + std::to_string(chunks_received) + " chunks");
-        stream->Write(update);
-      }
-
-      if (chunk.is_last_chunk()) {
-        std::cout << "Last chunk received for match: " << match_id << std::endl;
-        break;
-      }
+    analysis::VideoChunk first_chunk;
+    if (!stream->Read(&first_chunk)) {
+      return Status(grpc::StatusCode::INVALID_ARGUMENT, "No data received");
     }
 
-    analysis::MetricsUpdate final_update;
-    final_update.set_status("COMPLETED");
-    final_update.set_progress(1.0);
-    final_update.set_message("Streaming Phase 1 verify successful. " + std::to_string(chunks_received) + " chunks processed (mocked).");
-    stream->Write(final_update);
+    std::string match_id = first_chunk.match_id();
+    std::string fifo_path = "/tmp/analysis_fifo_" + match_id;
+    mkfifo(fifo_path.c_str(), 0666);
+
+    std::atomic<bool> streaming_done{false};
+    std::atomic<bool> error_occurred{false};
+    std::string error_msg = "";
+
+    // Thread to feed chunks to FIFO
+    std::thread feeder_thread([&]() {
+      int fd = open(fifo_path.c_str(), O_WRONLY);
+      if (fd == -1) {
+        error_occurred = true;
+        error_msg = "Failed to open FIFO for writing";
+        return;
+      }
+
+      // Process first chunk
+      write(fd, first_chunk.data().data(), first_chunk.data().size());
+
+      analysis::VideoChunk chunk;
+      while (stream->Read(&chunk)) {
+        write(fd, chunk.data().data(), chunk.data().size());
+        if (chunk.is_last_chunk())
+          break;
+      }
+      close(fd);
+      streaming_done = true;
+    });
+
+    try {
+      // Initialize Components (Same as AnalyzeVideo but streaming)
+      Calibration calibration(first_chunk.calibration_path());
+      YoloV8 yolo_detector(first_chunk.model_path().empty()
+                               ? "yolov8m.onnx"
+                               : first_chunk.model_path());
+      PlayerTracker player_tracker;
+      BallTracker ball_tracker;
+
+      // Output dir for final artifacts if needed
+      std::string output_dir = "/tmp/analysis_stream_" + match_id;
+      fs::create_directories(output_dir);
+
+      cv::VideoCapture cap(fifo_path);
+      if (!cap.isOpened()) {
+        streaming_done = true; // Stop thread
+        feeder_thread.join();
+        unlink(fifo_path.c_str());
+        return Status(grpc::StatusCode::INTERNAL,
+                      "Failed to open video stream via FIFO");
+      }
+
+      cv::Mat frame;
+      int current_frame_idx = 0;
+      double video_fps = cap.get(cv::CAP_PROP_FPS);
+      if (video_fps == 0)
+        video_fps = 30.0;
+
+      while (cap.read(frame)) {
+        current_frame_idx++;
+
+        // 1. Detection
+        auto all_detections = yolo_detector.detect(frame);
+        std::vector<Detection> player_detections, ball_detections;
+        for (const auto &det : all_detections) {
+          if (det.class_id == 0)
+            player_detections.push_back(det);
+          else if (det.class_id == 32)
+            ball_detections.push_back(det);
+        }
+
+        // 2. Tracking
+        player_tracker.update(player_detections, frame);
+        ball_tracker.update(ball_detections);
+
+        // 3. Real-world Projection
+        auto real_world_players =
+            calibration.transform(player_tracker.get_tracks());
+        auto real_world_ball = calibration.transform(ball_tracker.get_track());
+
+        // 4. Send metrics back in real-time
+        if (current_frame_idx % 5 == 0) { // Throttling updates to 6Hz approx
+          analysis::MetricsUpdate update;
+          update.set_status("PROCESSING");
+          update.set_message("Processing frame " +
+                             std::to_string(current_frame_idx));
+
+          // Add Player Metrics
+          for (const auto &player_pair : real_world_players) {
+            auto *m = update.add_metrics();
+            m->set_player_id(player_pair.first);
+            m->set_x(player_pair.second.x);
+            m->set_y(player_pair.second.y);
+            m->set_frame_index(current_frame_idx);
+          }
+
+          // Add Ball Metric
+          if (real_world_ball.first != -1) {
+            auto *b = update.mutable_ball_metric();
+            b->set_x(real_world_ball.second.x);
+            b->set_y(real_world_ball.second.y);
+            b->set_frame_index(current_frame_idx);
+          }
+
+          stream->Write(update);
+        }
+      }
+
+      feeder_thread.join();
+      unlink(fifo_path.c_str());
+
+      analysis::MetricsUpdate final_update;
+      final_update.set_status("COMPLETED");
+      final_update.set_progress(1.0);
+      final_update.set_message("Real-time analysis finished. " +
+                               std::to_string(current_frame_idx) +
+                               " frames processed.");
+      stream->Write(final_update);
+
+    } catch (const std::exception &e) {
+      if (feeder_thread.joinable())
+        feeder_thread.join();
+      unlink(fifo_path.c_str());
+      return Status(grpc::StatusCode::INTERNAL, e.what());
+    }
 
     return Status::OK;
   }
