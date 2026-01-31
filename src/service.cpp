@@ -158,6 +158,47 @@ class AnalysisEngineServiceImpl final : public AnalysisEngine::Service {
 
     return Status::OK;
   }
+
+  Status StreamAnalysis(ServerContext *context,
+                        grpc::ServerReaderWriter<analysis::MetricsUpdate,
+                                                 analysis::VideoChunk> *stream)
+      override {
+    std::cout << "Starting bi-directional streaming analysis..." << std::endl;
+
+    analysis::VideoChunk chunk;
+    int chunks_received = 0;
+    std::string match_id = "unknown";
+
+    while (stream->Read(&chunk)) {
+      chunks_received++;
+      if (chunks_received == 1) {
+        match_id = chunk.match_id();
+        std::cout << "Streaming for match: " << match_id << std::endl;
+      }
+
+      // Phase 1: Just echo progress back
+      if (chunks_received % 10 == 0 || chunk.is_last_chunk()) {
+        analysis::MetricsUpdate update;
+        update.set_status("RECEIVING");
+        update.set_progress(0.0); // Progress is hard to track without knowing total size
+        update.set_message("Received " + std::to_string(chunks_received) + " chunks");
+        stream->Write(update);
+      }
+
+      if (chunk.is_last_chunk()) {
+        std::cout << "Last chunk received for match: " << match_id << std::endl;
+        break;
+      }
+    }
+
+    analysis::MetricsUpdate final_update;
+    final_update.set_status("COMPLETED");
+    final_update.set_progress(1.0);
+    final_update.set_message("Streaming Phase 1 verify successful. " + std::to_string(chunks_received) + " chunks processed (mocked).");
+    stream->Write(final_update);
+
+    return Status::OK;
+  }
 };
 
 void RunServer(const std::string &port) {

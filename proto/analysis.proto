@@ -3,8 +3,11 @@ syntax = "proto3";
 package analysis;
 
 service AnalysisEngine {
-  // Analyzes a video and returns a stream of progress updates and final results.
+  // Legacy method (File-based)
   rpc AnalyzeVideo(VideoRequest) returns (stream VideoResponse);
+
+  // New Streaming method (Bi-directional)
+  rpc StreamAnalysis(stream VideoChunk) returns (stream MetricsUpdate);
 }
 
 message VideoRequest {
@@ -17,11 +20,9 @@ message VideoRequest {
 
 message VideoResponse {
   string job_id = 1;
-  string status = 2; // PENDING, PROCESSING, COMPLETED, FAILED
-  float progress = 3; // 0.0 to 1.0
+  string status = 2;
+  float progress = 3;
   string message = 4;
-  
-  // Final results (only populated when status is COMPLETED)
   AnalysisResult result = 5;
 }
 
@@ -32,4 +33,40 @@ message AnalysisResult {
   string report_id = 4;
   string player_metrics_csv_path = 5;
   string ball_metrics_csv_path = 6;
+}
+
+// --- Streaming Messages ---
+
+message VideoChunk {
+  bytes data = 1;
+  string match_id = 2;
+  string calibration_path = 3;
+  string model_path = 4;
+  int32 chunk_index = 5;
+  bool is_last_chunk = 6;
+}
+
+message MetricsUpdate {
+  string status = 1;
+  float progress = 2;
+  string message = 3;
+  repeated PlayerMetric metrics = 4;
+  BallMetric ball_metric = 5;
+}
+
+message PlayerMetric {
+  int32 player_id = 1;
+  float x = 2;
+  float y = 3;
+  float speed = 4;
+  string team_id = 5;
+  int32 frame_index = 6;
+}
+
+message BallMetric {
+  float x = 1;
+  float y = 2;
+  float z = 3; // For 3D projection if available
+  bool is_possessed = 4;
+  int32 frame_index = 5;
 }
