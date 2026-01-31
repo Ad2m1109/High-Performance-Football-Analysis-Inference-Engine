@@ -12,6 +12,7 @@ message VideoRequest {
   string calibration_path = 2;
   float confidence_threshold = 3;
   string match_id = 4;
+  string model_path = 5;
 }
 
 message VideoResponse {

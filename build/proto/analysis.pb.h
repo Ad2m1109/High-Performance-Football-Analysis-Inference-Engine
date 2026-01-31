@@ -190,6 +190,7 @@ class VideoRequest PROTOBUF_FINAL :
     kVideoPathFieldNumber = 1,
     kCalibrationPathFieldNumber = 2,
     kMatchIdFieldNumber = 4,
+    kModelPathFieldNumber = 5,
     kConfidenceThresholdFieldNumber = 3,
   };
   // string video_path = 1;
@@ -267,6 +268,31 @@ class VideoRequest PROTOBUF_FINAL :
   std::string* _internal_mutable_match_id();
   public:
 
+  // string model_path = 5;
+  void clear_model_path();
+  const std::string& model_path() const;
+  void set_model_path(const std::string& value);
+  void set_model_path(std::string&& value);
+  void set_model_path(const char* value);
+  void set_model_path(const char* value, size_t size);
+  std::string* mutable_model_path();
+  std::string* release_model_path();
+  void set_allocated_model_path(std::string* model_path);
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  std::string* unsafe_arena_release_model_path();
+  GOOGLE_PROTOBUF_RUNTIME_DEPRECATED("The unsafe_arena_ accessors for"
+  "    string fields are deprecated and will be removed in a"
+  "    future release.")
+  void unsafe_arena_set_allocated_model_path(
+      std::string* model_path);
+  private:
+  const std::string& _internal_model_path() const;
+  void _internal_set_model_path(const std::string& value);
+  std::string* _internal_mutable_model_path();
+  public:
+
   // float confidence_threshold = 3;
   void clear_confidence_threshold();
   float confidence_threshold() const;
@@ -286,6 +312,7 @@ class VideoRequest PROTOBUF_FINAL :
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr video_path_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr calibration_path_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr match_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr model_path_;
   float confidence_threshold_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_analysis_2eproto;
@@ -1056,6 +1083,87 @@ inline void VideoRequest::unsafe_arena_set_allocated_match_id(
   match_id_.UnsafeArenaSetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
       match_id, GetArena());
   // @@protoc_insertion_point(field_unsafe_arena_set_allocated:analysis.VideoRequest.match_id)
+}
+
+// string model_path = 5;
+inline void VideoRequest::clear_model_path() {
+  model_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline const std::string& VideoRequest::model_path() const {
+  // @@protoc_insertion_point(field_get:analysis.VideoRequest.model_path)
+  return _internal_model_path();
+}
+inline void VideoRequest::set_model_path(const std::string& value) {
+  _internal_set_model_path(value);
+  // @@protoc_insertion_point(field_set:analysis.VideoRequest.model_path)
+}
+inline std::string* VideoRequest::mutable_model_path() {
+  // @@protoc_insertion_point(field_mutable:analysis.VideoRequest.model_path)
+  return _internal_mutable_model_path();
+}
+inline const std::string& VideoRequest::_internal_model_path() const {
+  return model_path_.Get();
+}
+inline void VideoRequest::_internal_set_model_path(const std::string& value) {
+  
+  model_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value, GetArena());
+}
+inline void VideoRequest::set_model_path(std::string&& value) {
+  
+  model_path_.Set(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value), GetArena());
+  // @@protoc_insertion_point(field_set_rvalue:analysis.VideoRequest.model_path)
+}
+inline void VideoRequest::set_model_path(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  model_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value),
+              GetArena());
+  // @@protoc_insertion_point(field_set_char:analysis.VideoRequest.model_path)
+}
+inline void VideoRequest::set_model_path(const char* value,
+    size_t size) {
+  
+  model_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(
+      reinterpret_cast<const char*>(value), size), GetArena());
+  // @@protoc_insertion_point(field_set_pointer:analysis.VideoRequest.model_path)
+}
+inline std::string* VideoRequest::_internal_mutable_model_path() {
+  
+  return model_path_.Mutable(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline std::string* VideoRequest::release_model_path() {
+  // @@protoc_insertion_point(field_release:analysis.VideoRequest.model_path)
+  return model_path_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+}
+inline void VideoRequest::set_allocated_model_path(std::string* model_path) {
+  if (model_path != nullptr) {
+    
+  } else {
+    
+  }
+  model_path_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), model_path,
+      GetArena());
+  // @@protoc_insertion_point(field_set_allocated:analysis.VideoRequest.model_path)
+}
+inline std::string* VideoRequest::unsafe_arena_release_model_path() {
+  // @@protoc_insertion_point(field_unsafe_arena_release:analysis.VideoRequest.model_path)
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  
+  return model_path_.UnsafeArenaRelease(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      GetArena());
+}
+inline void VideoRequest::unsafe_arena_set_allocated_model_path(
+    std::string* model_path) {
+  GOOGLE_DCHECK(GetArena() != nullptr);
+  if (model_path != nullptr) {
+    
+  } else {
+    
+  }
+  model_path_.UnsafeArenaSetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      model_path, GetArena());
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:analysis.VideoRequest.model_path)
 }
 
 // -------------------------------------------------------------------

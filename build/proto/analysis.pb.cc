@@ -86,6 +86,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_analysis_2eproto::offsets[] PR
   PROTOBUF_FIELD_OFFSET(::analysis::VideoRequest, calibration_path_),
   PROTOBUF_FIELD_OFFSET(::analysis::VideoRequest, confidence_threshold_),
   PROTOBUF_FIELD_OFFSET(::analysis::VideoRequest, match_id_),
+  PROTOBUF_FIELD_OFFSET(::analysis::VideoRequest, model_path_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::analysis::VideoResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -110,8 +111,8 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_analysis_2eproto::offsets[] PR
 };
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::analysis::VideoRequest)},
-  { 9, -1, sizeof(::analysis::VideoResponse)},
-  { 19, -1, sizeof(::analysis::AnalysisResult)},
+  { 10, -1, sizeof(::analysis::VideoResponse)},
+  { 20, -1, sizeof(::analysis::AnalysisResult)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -121,20 +122,20 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
 };
 
 const char descriptor_table_protodef_analysis_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\016analysis.proto\022\010analysis\"l\n\014VideoReque"
-  "st\022\022\n\nvideo_path\030\001 \001(\t\022\030\n\020calibration_pa"
-  "th\030\002 \001(\t\022\034\n\024confidence_threshold\030\003 \001(\002\022\020"
-  "\n\010match_id\030\004 \001(\t\"|\n\rVideoResponse\022\016\n\006job"
-  "_id\030\001 \001(\t\022\016\n\006status\030\002 \001(\t\022\020\n\010progress\030\003 "
-  "\001(\002\022\017\n\007message\030\004 \001(\t\022(\n\006result\030\005 \001(\0132\030.a"
-  "nalysis.AnalysisResult\"\244\001\n\016AnalysisResul"
-  "t\022\020\n\010match_id\030\001 \001(\t\022\024\n\014total_frames\030\002 \001("
-  "\005\022\027\n\017players_tracked\030\003 \001(\005\022\021\n\treport_id\030"
-  "\004 \001(\t\022\037\n\027player_metrics_csv_path\030\005 \001(\t\022\035"
-  "\n\025ball_metrics_csv_path\030\006 \001(\t2S\n\016Analysi"
-  "sEngine\022A\n\014AnalyzeVideo\022\026.analysis.Video"
-  "Request\032\027.analysis.VideoResponse0\001b\006prot"
-  "o3"
+  "\n\016analysis.proto\022\010analysis\"\200\001\n\014VideoRequ"
+  "est\022\022\n\nvideo_path\030\001 \001(\t\022\030\n\020calibration_p"
+  "ath\030\002 \001(\t\022\034\n\024confidence_threshold\030\003 \001(\002\022"
+  "\020\n\010match_id\030\004 \001(\t\022\022\n\nmodel_path\030\005 \001(\t\"|\n"
+  "\rVideoResponse\022\016\n\006job_id\030\001 \001(\t\022\016\n\006status"
+  "\030\002 \001(\t\022\020\n\010progress\030\003 \001(\002\022\017\n\007message\030\004 \001("
+  "\t\022(\n\006result\030\005 \001(\0132\030.analysis.AnalysisRes"
+  "ult\"\244\001\n\016AnalysisResult\022\020\n\010match_id\030\001 \001(\t"
+  "\022\024\n\014total_frames\030\002 \001(\005\022\027\n\017players_tracke"
+  "d\030\003 \001(\005\022\021\n\treport_id\030\004 \001(\t\022\037\n\027player_met"
+  "rics_csv_path\030\005 \001(\t\022\035\n\025ball_metrics_csv_"
+  "path\030\006 \001(\t2S\n\016AnalysisEngine\022A\n\014AnalyzeV"
+  "ideo\022\026.analysis.VideoRequest\032\027.analysis."
+  "VideoResponse0\001b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_analysis_2eproto_deps[1] = {
 };
@@ -145,7 +146,7 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_ana
 };
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_analysis_2eproto_once;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_analysis_2eproto = {
-  false, false, descriptor_table_protodef_analysis_2eproto, "analysis.proto", 522,
+  false, false, descriptor_table_protodef_analysis_2eproto, "analysis.proto", 543,
   &descriptor_table_analysis_2eproto_once, descriptor_table_analysis_2eproto_sccs, descriptor_table_analysis_2eproto_deps, 3, 0,
   schemas, file_default_instances, TableStruct_analysis_2eproto::offsets,
   file_level_metadata_analysis_2eproto, 3, file_level_enum_descriptors_analysis_2eproto, file_level_service_descriptors_analysis_2eproto,
@@ -187,6 +188,11 @@ VideoRequest::VideoRequest(const VideoRequest& from)
     match_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_match_id(),
       GetArena());
   }
+  model_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (!from._internal_model_path().empty()) {
+    model_path_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from._internal_model_path(),
+      GetArena());
+  }
   confidence_threshold_ = from.confidence_threshold_;
   // @@protoc_insertion_point(copy_constructor:analysis.VideoRequest)
 }
@@ -196,6 +202,7 @@ void VideoRequest::SharedCtor() {
   video_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   calibration_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   match_id_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  model_path_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   confidence_threshold_ = 0;
 }
 
@@ -210,6 +217,7 @@ void VideoRequest::SharedDtor() {
   video_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   calibration_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
   match_id_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  model_path_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
 
 void VideoRequest::ArenaDtor(void* object) {
@@ -236,6 +244,7 @@ void VideoRequest::Clear() {
   video_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   calibration_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   match_id_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  model_path_.ClearToEmpty(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   confidence_threshold_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -279,6 +288,15 @@ const char* VideoRequest::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_I
           auto str = _internal_mutable_match_id();
           ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "analysis.VideoRequest.match_id"));
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string model_path = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          auto str = _internal_mutable_model_path();
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(::PROTOBUF_NAMESPACE_ID::internal::VerifyUTF8(str, "analysis.VideoRequest.model_path"));
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -346,6 +364,16 @@ failure:
         4, this->_internal_match_id(), target);
   }
 
+  // string model_path = 5;
+  if (this->model_path().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_model_path().data(), static_cast<int>(this->_internal_model_path().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "analysis.VideoRequest.model_path");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_model_path(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -381,6 +409,13 @@ size_t VideoRequest::ByteSizeLong() const {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_match_id());
+  }
+
+  // string model_path = 5;
+  if (this->model_path().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_model_path());
   }
 
   // float confidence_threshold = 3;
@@ -428,6 +463,9 @@ void VideoRequest::MergeFrom(const VideoRequest& from) {
   if (from.match_id().size() > 0) {
     _internal_set_match_id(from._internal_match_id());
   }
+  if (from.model_path().size() > 0) {
+    _internal_set_model_path(from._internal_model_path());
+  }
   if (!(from.confidence_threshold() <= 0 && from.confidence_threshold() >= 0)) {
     _internal_set_confidence_threshold(from._internal_confidence_threshold());
   }
@@ -457,6 +495,7 @@ void VideoRequest::InternalSwap(VideoRequest* other) {
   video_path_.Swap(&other->video_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   calibration_path_.Swap(&other->calibration_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   match_id_.Swap(&other->match_id_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
+  model_path_.Swap(&other->model_path_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArena());
   swap(confidence_threshold_, other->confidence_threshold_);
 }
 
