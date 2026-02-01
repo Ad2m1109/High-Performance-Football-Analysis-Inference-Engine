@@ -44,7 +44,7 @@ The engine exposes a high-performance gRPC interface for frame-level and batch-l
 ```protobuf
 service AnalysisEngine {
   rpc AnalyzeFrame(FrameRequest) returns (FrameResponse);
-  rpc AnalyzeVideo(VideoRequest) returns (stream VideoResponse);
+  rpc StreamAnalysis(stream VideoChunk) returns (stream AnalysisResponse);
 }
 ```
 
@@ -157,14 +157,15 @@ Click on 4 pitch corners in canonical order (e.g., penalty box corners) to compu
   --batch-size 4
 ```
 
-**gRPC Service Mode:**
+**gRPC Service Mode (Production):**
 ```bash
 ./build/analysis_service \
   --port 50051 \
   --model models/yolov8m.onnx \
-  --calib calibration.yaml \
-  --workers 4
+  --calib calibration.yaml
 ```
+
+The service creates a temporary Linux FIFO (Named Pipe) to bridge raw gRPC bytes directly into OpenCV's `VideoCapture` for low-latency decoding.
 
 ### Configuration Parameters
 
